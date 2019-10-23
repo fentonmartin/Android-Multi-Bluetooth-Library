@@ -37,7 +37,8 @@ dependencies {
     //compile project(':Bluetooth_lib')
 
     implementation 'de.greenrobot:eventbus:2.2.0'
-    implementation 'com.jakewharton:butterknife:6.1.0'
+    implementation 'com.jakewharton:butterknife:10.2.0'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:10.2.0'
     implementation 'com.ramimartin.multibluetooth:AndroidMultiBluetoothLibrary:2.0.4-SNAPSHOT'
 }
 
