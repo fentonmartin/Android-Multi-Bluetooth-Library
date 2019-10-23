@@ -17,8 +17,8 @@ import com.ramimartin.sample.multibluetooth.R;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+import butterknife.BindView;
 import butterknife.ButterKnife;
-import butterknife.InjectView;
 import butterknife.OnClick;
 import de.greenrobot.event.EventBus;
 
@@ -37,7 +37,7 @@ public class DiscoveredDialogFragment extends DialogFragment {
         public void onScanClicked();
     }
 
-    @InjectView(R.id.listview)
+    @BindView(R.id.listview)
     ListView mListView;
     private SimpleAdapter mAdapter;
     private ArrayList<HashMap<String, String>> mListDevice;
@@ -49,7 +49,7 @@ public class DiscoveredDialogFragment extends DialogFragment {
         getDialog().getWindow().requestFeature(Window.FEATURE_NO_TITLE);
         getDialog().getWindow().setBackgroundDrawable(new ColorDrawable(0));
         getDialog().setCanceledOnTouchOutside(false);
-        ButterKnife.inject(this, view);
+        ButterKnife.bind(this, view);
         return view;
     }
 
@@ -79,7 +79,6 @@ public class DiscoveredDialogFragment extends DialogFragment {
     @Override
     public void onDestroyView() {
         super.onDestroyView();
-        ButterKnife.reset(this);
     }
 
     @Override

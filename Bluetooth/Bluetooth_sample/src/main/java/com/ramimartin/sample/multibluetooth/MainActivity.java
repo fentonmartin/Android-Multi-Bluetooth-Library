@@ -20,8 +20,8 @@ import com.ramimartin.multibluetooth.bluetooth.manager.BluetoothManager;
 import java.util.ArrayList;
 import java.util.List;
 
+import butterknife.BindView;
 import butterknife.ButterKnife;
-import butterknife.InjectView;
 import butterknife.OnClick;
 
 
@@ -29,31 +29,31 @@ public class MainActivity extends BluetoothFragmentActivity implements Discovere
 
     private static final int PERMISSION_REQUEST_COARSE_LOCATION = 1;
 
-    @InjectView(R.id.listview)
+    @BindView(R.id.listview)
     ListView mListView;
     ArrayAdapter<String> mAdapter;
     List<String> mListLog;
 
-    @InjectView(R.id.communication)
+    @BindView(R.id.communication)
     EditText mEditText;
-    @InjectView(R.id.send)
+    @BindView(R.id.send)
     ImageButton mSendBtn;
 
-    @InjectView(R.id.client)
+    @BindView(R.id.client)
     ToggleButton mClientToggleBtn;
-    @InjectView(R.id.serveur)
+    @BindView(R.id.serveur)
     ToggleButton mServerToggleBtn;
 
-    @InjectView(R.id.connect)
+    @BindView(R.id.connect)
     Button mConnectBtn;
-    @InjectView(R.id.disconnect)
+    @BindView(R.id.disconnect)
     Button mDisconnect;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        ButterKnife.inject(this);
+        ButterKnife.bind(this);
 
         mListLog = new ArrayList<>();
         mAdapter = new ArrayAdapter<>(this, R.layout.item_console, mListLog);
